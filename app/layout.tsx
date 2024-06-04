@@ -3,6 +3,7 @@ import React from 'react';
 import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '@/theme';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Portfolio App',
@@ -24,7 +25,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <Header />
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );
